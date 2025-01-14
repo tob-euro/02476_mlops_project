@@ -6,3 +6,8 @@ coverage==7.6.10
 pytest==8.3.4
 kaggle==1.6.17
 dotenv==16.4.7
+transformers
+datasets
+huggingface_hub
+tensorboard==2.11
+pytorch_lightning==2.5.0
