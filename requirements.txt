@@ -10,3 +10,4 @@ transformers
 datasets
 huggingface_hub
 tensorboard==2.11
+pytorch_lightning==2.5.0
