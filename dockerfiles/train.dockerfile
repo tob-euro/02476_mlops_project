@@ -1,17 +1,28 @@
-# Base image
 FROM python:3.11-slim AS base
 
+# Install system dependencies
 RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
-COPY src src/
-COPY requirements.txt requirements.txt
-COPY requirements_dev.txt requirements_dev.txt
-COPY README.md README.md
-COPY pyproject.toml pyproject.toml
+# Set environment variables for training
+ENV DATASET_PATH=data/processed/train_processed.csv \
+    MODEL_NAME=bert-base-uncased \
+    OUTPUT_DIR=models/bert_disaster_tweets
 
-RUN pip install -r requirements.txt --no-cache-dir --verbose
-RUN pip install . --no-deps --no-cache-dir --verbose
+# Set working directory
+WORKDIR /app
 
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt --verbose
+
+# Copy the project files
+COPY src/ src/
+COPY configs/ configs/
+
+# Expose default ports for potential debugging
+EXPOSE 6006 8000
+
+# Set entrypoint to training script
 ENTRYPOINT ["python", "-u", "src/twitter_classification/train.py"]

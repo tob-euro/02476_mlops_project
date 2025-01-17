@@ -9,6 +9,7 @@ data/processed/train_processed.csv
 data/raw/test.csv
 data/raw/train.csv
 data/raw/sample_submission.csv
+data/results/
 
 # test cache
 manual_test/

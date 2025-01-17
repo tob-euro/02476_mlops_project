@@ -1,0 +1,33 @@
+model:
+  name: cardiffnlp/twitter-roberta-base
+  num_labels: 2
+
+training:
+  epochs: 3
+  batch_size: 16
+  learning_rate: 0.00001
+
+paths:
+  dataset: data/processed/train_processed.csv
+  output_dir: models/bert_disaster_tweets
+  raw_dir: data/raw
+  processed_dir: data/processed
+  results_dir: data/results
+  sample_submission: data/raw/sample_submission.csv
+
+evaluation:
+  dataset: data/processed/test_processed.csv
+  batch_size: 16
+  max_seq_length: 256
+
+data:
+  files:
+    - train.csv
+    - test.csv
+
+kaggle:
+  competition: nlp-getting-started
+
+logging:
+  level: INFO
+  file: logs/training.log

@@ -31,6 +31,7 @@ The directory structure of the project looks like this:
 │   └── workflows/
 │       └── tests.yaml
 ├── configs/                  # Configuration files
+│   └── config.yaml
 ├── data/                     # Data directory
 │   ├── processed
 │   └── raw
@@ -41,12 +42,21 @@ The directory structure of the project looks like this:
 │   ├── mkdocs.yml
 │   └── source/
 │       └── index.md
+├── logs/                     # log files
+│   └── data_pipeline.log/
 ├── models/                   # Trained models
+│   └── bert_disaster_tweets/
+│   │    ├── config.json
+│   │    ├── model.safetensors
+│   │    ├── special_tokens_map.json
+│   │    ├── tokenizer_config.json
+│   │    ├── tokenizer.json
+│   │    └── vocab.txt
 ├── notebooks/                # Jupyter notebooks
 ├── reports/                  # Reports
 │   └── figures/
 ├── src/                      # Source code
-│   ├── project_name/
+│   ├── twitter_classification/
 │   │   ├── __init__.py
 │   │   ├── api.py
 │   │   ├── data.py
@@ -66,6 +76,7 @@ The directory structure of the project looks like this:
 ├── README.md                 # Project README
 ├── requirements.txt          # Project requirements
 ├── requirements_dev.txt      # Development requirements
+├── submission.csv            # Output file
 └── tasks.py                  # Project tasks
 ```
 
