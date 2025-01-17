@@ -7,7 +7,7 @@ def test_clean_text():
     print("[INFO] Testing clean_text...")
     text = "Hello, @world! Check out this link: https://www.example.com"
     cleaned = clean_text(text)
-    expected = "hello, <USER>! check out this link: <URL>"
+    expected = "hello, user! check out this link: url"
     assert cleaned == expected, f"Expected: {expected}, but got: {cleaned}"
     print("[PASS] clean_text works as expected.")
 

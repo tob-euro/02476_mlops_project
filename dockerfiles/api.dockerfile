@@ -1,17 +1,31 @@
-# Change from latest to a specific version if your requirements.txt
-FROM python:3.11-slim AS base
+# Start from the base Python image
+FROM python:3.11-slim AS builder
 
+# Install dependencies and tools
 RUN apt update && \
-    apt install --no-install-recommends -y build-essential gcc && \
+    apt install --no-install-recommends -y build-essential gcc curl && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
+# Copy requirements and install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt --verbose
+
+# Copy the application code
 COPY src src/
-COPY requirements.txt requirements.txt
-COPY requirements_dev.txt requirements_dev.txt
-COPY README.md README.md
-COPY pyproject.toml pyproject.toml
 
-RUN pip install -r requirements.txt --no-cache-dir --verbose
-RUN pip install . --no-deps --no-cache-dir --verbose
+# Set PYTHONPATH for application imports
+ENV PYTHONPATH="/src"
 
-ENTRYPOINT ["uvicorn", "src/twitter_classification/api:app", "--host", "0.0.0.0", "--port", "8000"]
+# Expose port 8000 for external access
+EXPOSE 8000
+
+# Add a health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
+    CMD curl --fail http://localhost:8000/health || exit 1
+
+# Switch to a non-root user
+RUN useradd -ms /bin/bash appuser
+USER appuser
+
+# Command to run the application
+ENTRYPOINT ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "src.twitter_classification.api:app"]
