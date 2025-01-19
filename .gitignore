@@ -4,10 +4,7 @@ docs/site/
 .env
 
 # Data
-data/processed
-data/raw/
 data/results/
-models/bert_disaster_tweets/model.safetensors
 
 # test cache
 manual_test/
