@@ -1,7 +1,7 @@
 torch==2.5.1
 typer==0.15.1
 fastapi==0.115.6
-uvicorn==0.22.0
+uvicorn==0.34.0
 gunicorn==23.0.0
 coverage==7.6.10
 pytest==8.3.4
