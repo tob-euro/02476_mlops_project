@@ -1,0 +1,4 @@
+[core]
+    remote = gcp_remote
+['remote "gcp_remote"']
+    url = gs://mlops_dvc_data

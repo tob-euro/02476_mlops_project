@@ -1,16 +1,10 @@
 docs/site/
 
-# Kaggle key
+# Sensitive information
 .env
 
 # Data
-data/processed/test_processed.csv
-data/processed/train_processed.csv
-data/raw/test.csv
-data/raw/train.csv
-data/raw/sample_submission.csv
 data/results/
-models/bert_disaster_tweets/model.safetensors
 
 # test cache
 manual_test/

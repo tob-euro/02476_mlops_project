@@ -65,12 +65,15 @@ def download_data(raw_dir: Path = RAW_DIR) -> None:
     """
     logger.info("Downloading dataset from Kaggle...")
 
-    load_dotenv()  # Load .env variables
+    # Load the .env/kaggle.env path from the config file
+    kaggle_env_path = Path(config["paths"]["kaggle_env"])
+    load_dotenv(dotenv_path=kaggle_env_path)
+
     kaggle_username = os.getenv("KAGGLE_USERNAME")
     kaggle_key = os.getenv("KAGGLE_KEY")
 
     if not kaggle_username or not kaggle_key:
-        raise EnvironmentError("Kaggle API credentials are missing. Check .env file.")
+        raise EnvironmentError(f"Kaggle API credentials are missing. Check {kaggle_env_path}.")
 
     try:
         subprocess.run(

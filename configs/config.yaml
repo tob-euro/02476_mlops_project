@@ -14,6 +14,9 @@ paths:
   processed_dir: data/processed
   results_dir: data/results
   sample_submission: data/raw/sample_submission.csv
+  env_dir: .env
+  kaggle_env: .env/kaggle.env
+
 
 evaluation:
   dataset: data/processed/test_processed.csv

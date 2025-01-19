@@ -1,20 +1,22 @@
-# Start from the base Python image
 FROM python:3.11-slim AS builder
 
-# Install dependencies and tools
+# Install system dependencies
 RUN apt update && \
     apt install --no-install-recommends -y build-essential gcc curl && \
     apt clean && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt --verbose
+# Set working directory
+WORKDIR /app
 
-# Copy the application code
-COPY src src/
+# Copy the entire project into the container
+COPY . /app
+
+# Install project dependencies using setup.py
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -e .
 
 # Set PYTHONPATH for application imports
-ENV PYTHONPATH="/src"
+ENV PYTHONPATH="/app/src"
 
 # Expose port 8000 for external access
 EXPOSE 8000
