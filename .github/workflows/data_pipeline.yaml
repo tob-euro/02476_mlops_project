@@ -28,10 +28,17 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
 
-      # Step 4: Authenticate with Google Cloud
+      # Step 4a: Debug GCP Key
+      - name: Debug GCP Key
+        run: |
+          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
+          echo "Content of gcp-key.json:"
+          head -n 5 gcp-key.json
+
+      # Step 4b: Authenticate with Google Cloud
       - name: Authenticate with GCS
         run: |
-          printf "%s" "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
+          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
           gcloud auth activate-service-account --key-file=gcp-key.json
           gcloud config set project mlops-448114
         env:

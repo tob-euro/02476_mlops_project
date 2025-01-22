@@ -1,6 +1,7 @@
 outs:
-- md5: 7042f69422b2154cf8a9e0140f8ab84f.dir
-  nfiles: 8
+- md5: 38307729365023290af9b6244c13f218.dir
+  nfiles: 4
   hash: md5
   path: raw
 # Simulating data change
+  size: 1431255
