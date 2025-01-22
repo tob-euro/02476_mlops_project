@@ -15,9 +15,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy the frontend application
 COPY ./src/twitter_classification/frontend.py /app/frontend.py
-
+zz
 # Expose the Streamlit port
 EXPOSE 8501
 
 # Command to start the Streamlit app
-ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8501", "--server.address=0.0.0.0", "--server.enableCORS", "false"]
+ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8501", "--server.address=0.0.0.0"]
