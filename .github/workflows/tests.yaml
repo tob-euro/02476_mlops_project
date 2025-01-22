@@ -31,12 +31,6 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -e .
           pip install -r requirements.txt
-          pip install dvc
-
-      - name: Pull DVC dependencies
-        if: runner.os != 'Windows'
-        run: |
-          dvc pull
 
       - name: Run tests & coverage
         run: |
