@@ -41,8 +41,12 @@ The directory structure of the project looks like this:
 ├── configs/                  # Configuration files
 │   └── config.yaml
 ├── data/                     # Data directory
-│   ├── processed
-│   └── raw
+│   ├── processed/
+│   ├── raw/
+│   ├── results/
+│   ├── .gitignore
+│   ├── processed.dvc
+│   └── raw.dvc
 ├── dockerfiles/              # Dockerfiles
 │   ├── api.Dockerfile
 │   └── train.Dockerfile
@@ -51,14 +55,19 @@ The directory structure of the project looks like this:
 │   └── source/
 │       └── index.md
 ├── logs/                     # log files
-│   └── data_pipeline.log/
+│   ├── training.log
+│   └── test.log
 ├── models/                   # Trained models
 │   └── bert_disaster_tweets/
+│   │    ├── .gitignore
 │   │    ├── config.json
+│   │    ├── merges.txt
 │   │    ├── model.safetensors
+│   │    ├── model.safetensors.dvc
 │   │    ├── special_tokens_map.json
 │   │    ├── tokenizer_config.json
 │   │    ├── tokenizer.json
+│   │    ├── vocab.json
 │   │    └── vocab.txt
 ├── notebooks/                # Jupyter notebooks
 ├── reports/                  # Reports
@@ -77,7 +86,10 @@ The directory structure of the project looks like this:
 │   ├── __init__.py
 │   ├── test_api.py
 │   ├── test_data.py
-│   └── test_model.py
+│   ├── test_model.py
+│   └── test_utils.py
+├── .dvcignore
+├── .gitattributes
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── LICENSE
@@ -85,7 +97,6 @@ The directory structure of the project looks like this:
 ├── README.md                 # Project README
 ├── requirements.txt          # Project requirements
 ├── requirements_dev.txt      # Development requirements
-├── submission.csv            # Output file
 └── tasks.py                  # Project tasks
 ```
 
