@@ -108,7 +108,7 @@ def preprocess(text: str) -> str:
 
     Arguments:
         text: string, raw tweet text.
-        
+
     Returns:
         string, preprocessed tweet.
     """

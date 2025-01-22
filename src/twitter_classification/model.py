@@ -6,8 +6,8 @@ from twitter_classification.utils import load_config
 config = load_config()
 
 def build_model(
-    model_name: str = config["model"]["name"], 
-    num_labels: int = config["model"]["num_labels"], 
+    model_name: str = config["model"]["name"],
+    num_labels: int = config["model"]["num_labels"],
     model_dir: str | None = None
 ) -> AutoModelForSequenceClassification:
     """
