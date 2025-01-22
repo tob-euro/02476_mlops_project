@@ -28,32 +28,32 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
 
+      # Step 4: Authenticate with Google Cloud
       - name: Authenticate with GCS
         run: |
           echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
           gcloud auth activate-service-account --key-file=gcp-key.json
           gcloud config set project mlops-448114
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          GOOGLE_APPLICATION_CREDENTIALS: gcp-key.json
 
-      # Step 4: Pull DVC Dependencies
+      # Step 5: Pull DVC Dependencies
       - name: Pull DVC data
         run: |
-          pip install dvc[gdrive]
-          pip install dvc[gs]
+          pip install dvc[gdrive] dvc[gs]
           dvc pull
 
-      # Step 5: Train the Model
+      # Step 6: Train the Model
       - name: Train the model
         run: |
           python src/twitter_classification/train.py
 
-      # Step 6: Evaluate the Model
+      # Step 7: Evaluate the Model
       - name: Evaluate the model
         run: |
           python src/twitter_classification/evaluate.py
 
-      # Optional Step 7: Update API (Restart or Reload)
+      # Optional Step 8: Restart API
       - name: Restart API
         run: |
           systemctl restart my-fastapi-api.service || echo "API restart skipped in CI"
