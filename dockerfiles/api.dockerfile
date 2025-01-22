@@ -16,8 +16,11 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy the entire project into the container
 COPY . /app
 
-# Expose port 8000 for the application
-EXPOSE 8000
+# Ensure the model files are also copied
+COPY ./models /app/models
+
+# Expose port 8080 for the application
+EXPOSE 8080
 
 # Command to start the FastAPI app
-CMD ["uvicorn", "src.twitter_classification.api:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.twitter_classification.api:app", "--host", "0.0.0.0", "--port", "8080"]
