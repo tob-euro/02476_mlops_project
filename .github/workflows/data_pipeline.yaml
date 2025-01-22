@@ -32,6 +32,7 @@ jobs:
       - name: Pull DVC data
         run: |
           pip install dvc[gdrive]
+          pip install dvc[gs]
           dvc pull
 
       # Step 5: Train the Model
