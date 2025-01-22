@@ -31,7 +31,7 @@ jobs:
       # Step 4: Authenticate with Google Cloud
       - name: Authenticate with GCS
         run: |
-          echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
+          printf "%s" "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > gcp-key.json
           gcloud auth activate-service-account --key-file=gcp-key.json
           gcloud config set project mlops-448114
         env:
