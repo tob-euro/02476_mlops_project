@@ -45,3 +45,4 @@ if __name__ == "__main__":
 
 
 # to run locally: streamlit run src\twitter_classification\frontend.py
+#Run with the cloud: https://frontend-backend-service-791862686266.europe-west1.run.app
