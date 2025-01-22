@@ -20,4 +20,4 @@ COPY ./src/twitter_classification/frontend.py /app/frontend.py
 EXPOSE 8501
 
 # Command to start the Streamlit app
-ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8501", "--server.address=0.0.0.0"]
+ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8501", "--server.address=0.0.0.0", "--server.enableCORS", "false"]
