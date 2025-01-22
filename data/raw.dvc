@@ -1,6 +1,6 @@
 outs:
-- md5: 44ab7b271957e169dd783442736dfc66.dir
-  nfiles: 7
+- md5: 4d87dd431a84523264a092d724c91ddc.dir
+  nfiles: 8
   hash: md5
   path: raw
 # Simulating data change
