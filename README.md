@@ -146,7 +146,7 @@ started with Machine Learning Operations (MLOps).
 - [ ] Write API tests for your application and setup continues integration for these (M24)
 - [ ] Load test your application (M24)
 - [ ] Create a more specialized ML-deployment API using either ONNX or BentoML, or both (M25)
-- [ ] Create a frontend for your API (M26)
+- [x] Create a frontend for your API (M26)
 
 
 **Week 3**
