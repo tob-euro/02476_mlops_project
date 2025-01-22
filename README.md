@@ -26,6 +26,14 @@ We plan on using the RoBERTa (Robustly Optimized BERT Approach) model for this c
 
 The directory structure of the project looks like this:
 ```txt
+├── .dvc/                     # Github actions and dependabot
+│   ├── cache/                 
+│   ├── tmp/                   
+│   ├── .gitignore
+│   └── .config
+├── .env/                     # Very secret keys
+│   ├── kaggle.env
+│   ├── mlops-448114-e0e59a05789f.json
 ├── .github/                  # Github actions and dependabot
 │   ├── dependabot.yaml
 │   └── workflows/
