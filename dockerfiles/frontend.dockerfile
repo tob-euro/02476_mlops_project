@@ -15,9 +15,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 # Copy the frontend application
 COPY ./src/twitter_classification/frontend.py /app/frontend.py
-zz
-# Expose the Streamlit port
-EXPOSE 8501
 
-# Command to start the Streamlit app
-ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8501", "--server.address=0.0.0.0"]
+# Expose port 8080 (required by Cloud Run)
+EXPOSE 8080
+
+# Command to start the Streamlit app on port 8080
+ENTRYPOINT ["streamlit", "run", "frontend.py", "--server.port", "8080", "--server.address=0.0.0.0"]
+
