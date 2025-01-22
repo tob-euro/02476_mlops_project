@@ -1,4 +1,3 @@
-import pytest
 from twitter_classification.utils import load_config
 
 

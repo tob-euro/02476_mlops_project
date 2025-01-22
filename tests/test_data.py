@@ -5,7 +5,7 @@ import pandas as pd
 import pytest
 import torch
 from twitter_classification.data import TextDataset, preprocess, preprocess_data
-from tests import _PATH_RAW_DATA, _PATH_PROCESSED_DATA
+from tests import _PATH_RAW_DATA
 
 # Skip the test if raw data is missing
 @pytest.mark.skipif(not os.path.exists(_PATH_RAW_DATA), reason="Raw data not found")
