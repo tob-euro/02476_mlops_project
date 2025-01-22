@@ -14,6 +14,9 @@ def load_config(config_path: str = "configs/config.yaml") -> dict:
 
 def setup_logger(log_file: str, level: str = "INFO"):
     """Set up logging configuration."""
+    log_path = Path(log_file)
+    log_path.parent.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
+
     logging.basicConfig(
         level=level,
         format="%(asctime)s - %(levelname)s - %(message)s",
