@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from prometheus_client import Counter, make_asgi_app
 import torch
 from pathlib import Path
 
@@ -20,6 +21,11 @@ class PredictionRequest(BaseModel):
 class PredictionResponse(BaseModel):
     label: int
     confidence: float
+
+# Define Prometheus metrics
+error_counter = Counter("prediction_error", "Number of prediction errors")
+
+app.mount("/metrics", make_asgi_app())
 
 @app.on_event("startup")
 async def load_model():
