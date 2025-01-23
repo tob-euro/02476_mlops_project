@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-BACKEND_URL = "https://twitter-classification-api-791862686266.europe-west1.run.app"  
+BACKEND_URL = "https://twitter-backend-791862686266.europe-west1.run.app/"
 
 def get_prediction(text):
     """Send text to the backend and return prediction results."""
@@ -43,6 +43,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# to run locally: streamlit run src\twitter_classification\frontend.py
-#Run with the cloud: https://frontend-backend-service-791862686266.europe-west1.run.app
+# to run locally: streamlit run src/twitter_classification/frontend.py

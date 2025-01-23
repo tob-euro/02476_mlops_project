@@ -21,6 +21,16 @@ We will initially train and evaluate our model using the Kaggle dataset "Natural
 We plan on using the RoBERTa (Robustly Optimized BERT Approach) model for this classification task. We currently intend to use pretrained weights for the most part, but this might change if time allows. \
 
 
+## Deployment
+
+### Frontend
+Deployed to Cloud Run:
+[Frontend Service URL](https://twitter-frontend-791862686266.europe-west1.run.app)
+
+### Backend
+Deployed to Cloud Run:
+[Backend Service URL](https://twitter-backend-791862686266.europe-west1.run.app)
+
 
 ## Project structure
 
@@ -136,8 +146,8 @@ started with Machine Learning Operations (MLOps).
 - [x] Get some continuous integration running on the GitHub repository (M17)
 - [x] Add caching and multi-os/python/pytorch testing to your continuous integration (M17)
 - [x] Add a linting step to your continuous integration (M17) Add pre-commit hooks to your version control setup (M18)
-- [x] Add a continues workflow that triggers when data changes (M19)
-- [x] Add a continues workflow that triggers when changes to the model registry is made (M19)
+- [ ] Add a continues workflow that triggers when data changes (M19)
+- [ ] Add a continues workflow that triggers when changes to the model registry is made (M19)
 - [x] Create a data storage in GCP Bucket for your data and link this with your data version control setup (M21)
 - [x] Create a trigger workflow for automatically building your docker images (M21)
 - [ ] Get your model training in GCP using either the Engine or Vertex AI (M21)
