@@ -129,7 +129,7 @@ will check the repositories and the code to verify your answers.
 >
 > Answer:
 
-*s234823, s234830, s234865*
+s234823, s234830, s234865
 
 ### Question 3
 > **A requirement to the project is that you include a third-party package not covered in the course. What framework**
