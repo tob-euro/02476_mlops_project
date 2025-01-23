@@ -18,7 +18,7 @@ We intend to use the Transformers framework by HuggingFace. This framework provi
 We will initially train and evaluate our model using the Kaggle dataset "Natural Language Processing with Disaster Tweets". This dataset consists of approx. 10000 tweets
 
 #### What models do you expect to use
-We plan on using the RoBERTa (Robustly Optimized BERT Approach) model for this classification task. We currently intend to use pretrained weights for the most part, but this might change if time allows.
+We plan on using the RoBERTa (Robustly Optimized BERT Approach) model for this classification task. We currently intend to use pretrained weights for the most part, but this might change if time allows. \
 
 
 
