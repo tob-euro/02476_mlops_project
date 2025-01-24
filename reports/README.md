@@ -46,70 +46,67 @@ curriculum in this course. Therefore, we do not expect at all that you have chec
 The parenthesis at the end indicates what module the bullet point is related to. Please be honest in your answers, we
 will check the repositories and the code to verify your answers.
 
-### Week 1
+**Week 1**
+- [x] Week 1  Create a git repository (M5)
+- [x] Make sure that all team members have write access to the GitHub repository (M5)
+- [x] Create a dedicated environment for you project to keep track of your packages (M2)
+- [x] Create the initial file structure using cookiecutter with an appropriate template (M6)
+- [x] Fill out the data.py file such that it downloads whatever data you need and preprocesses it (if necessary) (M6)
+- [x] Add a model to model.py and a training procedure to train.py and get that running (M6)
+- [x] Remember to fill out the requirements.txt and requirements_dev.txt file with whatever dependencies that you are using (M2+M6)
+- [x] Remember to comply with good coding practices (pep8) while doing the project (M7)
+- [x] Do a bit of code typing and remember to document essential parts of your code (M7)
+- [x] Setup version control for your data or part of your data (M8)
+- [ ] Add command line interfaces and project commands to your code where it makes sense (M9)
+- [x] Construct one or multiple docker files for your code (M10)
+- [x] Build the docker files locally and make sure they work as intended (M10)
+- [x] Write one or multiple configurations files for your experiments (M11)
+- [ ] Used Hydra to load the configurations and manage your hyperparameters (M11)
+- [ ] Use profiling to optimize your code (M12)
+- [x] Use logging to log important events in your code (M14)
+- [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code (M14)
+- [ ] Consider running a hyperparameter optimization sweep (M14)
+- [ ] Use PyTorch-lightning (if applicable) to reduce the amount of boilerplate in your code (M15)
 
-* [ ] Create a git repository (M5)
-* [ ] Make sure that all team members have write access to the GitHub repository (M5)
-* [ ] Create a dedicated environment for you project to keep track of your packages (M2)
-* [ ] Create the initial file structure using cookiecutter with an appropriate template (M6)
-* [ ] Fill out the `data.py` file such that it downloads whatever data you need and preprocesses it (if necessary) (M6)
-* [ ] Add a model to `model.py` and a training procedure to `train.py` and get that running (M6)
-* [ ] Remember to fill out the `requirements.txt` and `requirements_dev.txt` file with whatever dependencies that you
-    are using (M2+M6)
-* [ ] Remember to comply with good coding practices (`pep8`) while doing the project (M7)
-* [ ] Do a bit of code typing and remember to document essential parts of your code (M7)
-* [ ] Setup version control for your data or part of your data (M8)
-* [ ] Add command line interfaces and project commands to your code where it makes sense (M9)
-* [ ] Construct one or multiple docker files for your code (M10)
-* [ ] Build the docker files locally and make sure they work as intended (M10)
-* [ ] Write one or multiple configurations files for your experiments (M11)
-* [ ] Used Hydra to load the configurations and manage your hyperparameters (M11)
-* [ ] Use profiling to optimize your code (M12)
-* [ ] Use logging to log important events in your code (M14)
-* [ ] Use Weights & Biases to log training progress and other important metrics/artifacts in your code (M14)
-* [ ] Consider running a hyperparameter optimization sweep (M14)
-* [ ] Use PyTorch-lightning (if applicable) to reduce the amount of boilerplate in your code (M15)
 
-### Week 2
+**Week 2**
+- [x] Write unit tests related to the data part of your code (M16)
+- [x] Write unit tests related to model construction and or model training (M16)
+- [x] Calculate the code coverage (M16)
+- [x] Get some continuous integration running on the GitHub repository (M17)
+- [x] Add caching and multi-os/python/pytorch testing to your continuous integration (M17)
+- [x] Add a linting step to your continuous integration (M17) Add pre-commit hooks to your version control setup (M18)
+- [ ] Add a continues workflow that triggers when data changes (M19)
+- [ ] Add a continues workflow that triggers when changes to the model registry is made (M19)
+- [x] Create a data storage in GCP Bucket for your data and link this with your data version control setup (M21)
+- [x] Create a trigger workflow for automatically building your docker images (M21)
+- [ ] Get your model training in GCP using either the Engine or Vertex AI (M21)
+- [x] Create a FastAPI application that can do inference using your model (M22)
+- [ ] Deploy your model in GCP using either Functions or Run as the backend (M23)
+- [ ] Write API tests for your application and setup continues integration for these (M24)
+- [ ] Load test your application (M24)
+- [ ] Create a more specialized ML-deployment API using either ONNX or BentoML, or both (M25)
+- [x] Create a frontend for your API (M26)
 
-* [ ] Write unit tests related to the data part of your code (M16)
-* [ ] Write unit tests related to model construction and or model training (M16)
-* [ ] Calculate the code coverage (M16)
-* [ ] Get some continuous integration running on the GitHub repository (M17)
-* [ ] Add caching and multi-os/python/pytorch testing to your continuous integration (M17)
-* [ ] Add a linting step to your continuous integration (M17)
-* [ ] Add pre-commit hooks to your version control setup (M18)
-* [ ] Add a continues workflow that triggers when data changes (M19)
-* [ ] Add a continues workflow that triggers when changes to the model registry is made (M19)
-* [ ] Create a data storage in GCP Bucket for your data and link this with your data version control setup (M21)
-* [ ] Create a trigger workflow for automatically building your docker images (M21)
-* [ ] Get your model training in GCP using either the Engine or Vertex AI (M21)
-* [ ] Create a FastAPI application that can do inference using your model (M22)
-* [ ] Deploy your model in GCP using either Functions or Run as the backend (M23)
-* [ ] Write API tests for your application and setup continues integration for these (M24)
-* [ ] Load test your application (M24)
-* [ ] Create a more specialized ML-deployment API using either ONNX or BentoML, or both (M25)
-* [ ] Create a frontend for your API (M26)
 
-### Week 3
+**Week 3**
+- [ ] Check how robust your model is towards data drifting (M27)
+- [ ] Deploy to the cloud a drift detection API (M27)
+- [x] Instrument your API with a couple of system metrics (M28)
+- [ ] Setup cloud monitoring of your instrumented application (M28)
+- [x] Create one or more alert systems in GCP to alert you if your app is not behaving correctly (M28)
+- [ ] If applicable, optimize the performance of your data loading using distributed data loading (M29)
+- [ ] If applicable, optimize the performance of your training pipeline by using distributed training (M30)
+- [x] Play around with quantization, compilation and pruning for you trained models to increase inference speed (M31)
 
-* [ ] Check how robust your model is towards data drifting (M27)
-* [ ] Deploy to the cloud a drift detection API (M27)
-* [ ] Instrument your API with a couple of system metrics (M28)
-* [ ] Setup cloud monitoring of your instrumented application (M28)
-* [ ] Create one or more alert systems in GCP to alert you if your app is not behaving correctly (M28)
-* [ ] If applicable, optimize the performance of your data loading using distributed data loading (M29)
-* [ ] If applicable, optimize the performance of your training pipeline by using distributed training (M30)
-* [ ] Play around with quantization, compilation and pruning for you trained models to increase inference speed (M31)
 
-### Extra
-
-* [ ] Write some documentation for your application (M32)
-* [ ] Publish the documentation to GitHub Pages (M32)
-* [ ] Revisit your initial project description. Did the project turn out as you wanted?
-* [ ] Create an architectural diagram over your MLOps pipeline
-* [ ] Make sure all group members have an understanding about all parts of the project
-* [ ] Uploaded all your code to GitHub
+**Extra**
+- [ ] Write some documentation for your application (M32)
+- [ ] Publish the documentation to GitHub Pages (M32)
+- [ ] Revisit your initial project description. Did the project turn out as you wanted?
+- [x] Create an architectural diagram over your MLOps pipeline
+- [x] Make sure all group members have an understanding about all parts of the project
+- [x] Uploaded all your code to GitHub
 
 ## Group information
 
@@ -143,7 +140,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 3 fill here ---
+For our project, we used the Transformers framework by Huggingface. This library provides access to numerous pretrained models, making it an excellent choice for our text classification task. We specifically used the cardiffnlp/twitter-roberta-base model, which is well-suited for social media text analysis.
+The Transformers framework allowed us to load and fine-tune this model for our binary classification problem (disaster vs. non-disaster tweets). Its seamless integration with PyTorch simplified tasks like model loading, tokenization, and inference. Additionally, we benefited from the flexibility to load pretrained weights from Huggingface's repository, as training everything ourselves would not have been feasible.
+
 
 ## Coding environment
 
@@ -163,7 +162,17 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 4 fill here ---
+We used conda for managing our dependencies and environments in the project. Each team member maintained their own separate conda environment but ensured consistency by relying on the requirements.txt and requirements_dev.txt files provided in the project.
+To set up the environment, a team member would:
+Clone the project repository from version control (e.g., GitHub).
+Install conda (if not already installed).
+Create and activate their own conda environment using:
+conda create --name <env_name> python=3.11
+conda activate <env_name>
+Install the project dependencies by running:
+pip install -r requirements.txt
+pip install -r requirements_dev.txt
+
 
 ### Question 5
 
@@ -179,7 +188,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 5 fill here ---
+From the cookiecutter template we have filled out the configs, .github, data, dockerfiles, models, src, tests and reports folder. We have removed the notebooks and the docs folder because we did not use any notebooks or generate documentation with MkDocs for our project. We also added an .dvc folder to manage experiment configuration and track data versions using Data Version Control (DVC). Inside the src folder, we’ve broken the code into separate modules for handling data, training models, evaluating them, and running inference, which helps keep everything organized. The api.py  file runs the FastAPI server, while train.py takes care of training the model. We’ve created unit tests in the folder tests to cover data processing, API and model behavior to ensure everything works correctly. 
+
 
 ### Question 6
 
@@ -194,7 +204,10 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 6 fill here ---
+We used Ruff with pre-commit hooks for linting and formatting, which helped keep our code clean and consistent. Ruff automatically fixed issues, enforced a line length of 120 characters, and pre-commit hooks handled YAML standards, trailing whitespace, and proper file endings.
+We added Python’s built-in type hints to define function inputs and outputs, making the code easier to read, debug, and work on collaboratively. For documentation, we wrote clear docstrings for functions and classes to explain their purpose and usage.
+These practices were crucial for maintaining readability and keeping everything organized, especially in a team setting. Automated checks with pre-commit saved us time and ensured everyone’s contributions met the same quality standards. Good documentation means that anyone new to the project can quickly get up to speed without needing constant explanations. And by enforcing rules around formatting and linting, we ensure the code stays clean and readable.
+
 
 ## Version control
 
@@ -213,7 +226,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 7 fill here ---
+In total, we have implemented eight main tests. These include tests for data handling, such as loading datasets, preprocessing single text samples, processing the entire dataset, and ensuring all labels are represented correctly. We also test model functionality, including building the model and initializing it without pre-trained weights. Additionally, we have API endpoint tests to verify the /, /health, and /metrics endpoints are working as expected. These tests cover the stability of our data processing pipeline, model construction, and API functionality, which are all critical for ensuring the reliability of the application.
+
 
 ### Question 8
 
@@ -228,7 +242,10 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 8 fill here ---
+The total code coverage of our project is 36%. This is relatively low, mainly because some important files like evaluate.py, frontend.py, and train.py have no tests at all, and others like api.py (55%) and data.py (69%) are only partially covered.
+The low coverage is mainly due to the lack of tests for key parts of the application, such as the evaluation logic, model training, and frontend functionality. These areas haven't been fully tested yet.
+Even if we had 100% coverage, we wouldn't necessarily trust the code to be error-free. Coverage only tells us which lines of code are being executed in tests, but it doesn't guarantee that the code is working correctly or handling edge cases. Tests also need to make sure the logic is right and cover a variety of scenarios.
+
 
 ### Question 9
 
@@ -243,7 +260,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 9 fill here ---
+We didn’t strictly use separate branches for each member, instead, we often pushed changes directly to the main branch after making updates. Since this was one of our first experiences collaborating on a larger project with GitHub, we kept things simple and focused on getting comfortable with version control.
+As the project progressed, we learned more about Git workflows and how branching and pull requests can help manage changes, avoid conflicts, and maintain a cleaner project history. It was a valuable learning process, and we feel more confident about using these practices in future projects to improve collaboration and ensure smoother teamwork.
+
 
 ### Question 10
 
@@ -258,7 +277,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 10 fill here ---
+We did make use of DVC in the following way: we set up remote storage on Google Cloud Storage and used DVC to track and version our dataset. Instead of keeping large files in Git, DVC allowed us to store just the metadata in Git and manage the actual data separately.
+In the end, it helped us in ensuring reproducibility and collaboration. By linking each version of our dataset to specific versions of the code, we could easily track changes and ensure everyone was working with the same data version. This streamlined our pipeline and made it much easier to manage updates and experiments.
+
 
 ### Question 11
 
@@ -275,7 +296,11 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 11 fill here ---
+We have organized our continuous integration into two main workflows: one for managing the data pipeline and another for running unit tests. These workflows are powered by GitHub Actions, which allow us to automate the testing and deployment processes effectively.
+For unit testing, we use a matrix strategy within GitHub Actions to ensure our code works across multiple operating systems (Ubuntu, Windows, macOS) and Python versions (3.11 and 3.12). This cross-platform testing guarantees that our codebase is compatible with a variety of environments, which is especially important in machine learning projects that may need to run on different platforms. Each time a push or pull request is made to the main branch, the tests are automatically triggered.
+The first steps in the workflow involve checking out the code and setting up the appropriate Python version based on the matrix configuration. We then install the required dependencies, including testing tools like pytest, to execute the tests. The tests are run on all specified platforms and Python versions, and the results are displayed directly in the GitHub Actions logs.
+Additionally, we leverage caching for Python dependencies to speed up the build process. This caching ensures that packages that have been previously installed are not reinstalled in subsequent runs, reducing the overall time spent on each test run.
+An example of a triggered workflow can be seen here: https://github.com/tob-euro/02476_mlops_project/actions/runs/12917746506
 
 ## Running code and tracking experiments
 
@@ -294,7 +319,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 12 fill here ---
+We configured experiments using configuration files where we define the model parameters, training settings, paths, and other necessary configurations. For example, the model settings are defined under the model section, while training parameters such as the number of epochs, batch size, and learning rate are set under the training section.
+We used a simple Python script to run the experiment, where we load the configuration using a load_config() function. For training, we load the dataset, model, and optimizer settings from the config file, and then train the model using the specified parameters.
+
 
 ### Question 13
 
@@ -309,7 +336,10 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 13 fill here ---
+To make sure our experiments are reproducible and no information is lost, we implemented detailed logging and used version control. Every time an experiment runs, we log key details like the hyperparameters (e.g., epochs, batch size, learning rate), training progress, and model performance. These logs are saved in a structured way, so they can be easily referred back to.
+We also use Git for version control, which means anyone can access the exact same code to run the experiment again. During training, we save model checkpoints, so if needed, we can resume or verify the experiment at any point.
+To reproduce an experiment, you would simply clone the repository, set up the environment using requirements.txt, and run the training script with the same parameters. 
+
 
 ### Question 14
 
@@ -326,7 +356,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 14 fill here ---
+We didn’t use W&B or any other experiment tracking service because we don’t have the correct answers for the test set. Since the only way to test our models is by submitting them to Kaggle for evaluation, we couldn’t track metrics like accuracy or loss on a separate validation set. This made it challenging to track performance independently of Kaggle’s validation process, as the results are provided only after submission to the competition platform. Therefore, we relied on Kaggle's system for validation and testing rather than setting up an additional tracking service.
+
 
 ### Question 15
 
@@ -341,7 +372,14 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 15 fill here ---
+For our project, we created multiple Docker images for different components, such as training, inference, and deployment. Each component runs in a containerized environment to ensure consistency across different systems.
+For example, to run the training process inside a Docker container, we use the following command:
+docker run train:latest --epochs 3 --batch_size 16 --learning_rate 0.00001
+This command runs the training script with specified parameters. The Docker image contains all the necessary dependencies, such as Python, libraries, and project files, ensuring the experiment can be reproduced in any environment.
+We also created Docker images for the API server (FastAPI), frontend (Streamlit), and Prometheus monitoring. Each image has a dedicated Dockerfile with environment-specific setup and configuration. Below is a link to one of the Dockerfiles used for training:
+https://github.com/tob-euro/02476_mlops_project/blob/main/dockerfiles/train.dockerfile
+This approach allows us to efficiently manage and deploy the entire experiment pipeline in isolated, reproducible environments.
+
 
 ### Question 16
 
@@ -356,7 +394,7 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 16 fill here ---
+When we ran into bugs while running our experiments, we mostly used print statements to track variables and outputs during execution. This helped us quickly spot where things were going wrong. We also used GitHub Copilot for extra support, which suggested potential fixes and helped with debugging. For more tricky problems, we turned to Google and Stack Overflow, where we found solutions or similar issues discussed by others, which helped us get past roadblocks. While we didn’t do any formal profiling, we kept an eye on the code’s performance and made improvements when needed. Overall, a mix of these methods helped us ensure our experiments ran smoothly and our code worked as expected.
 
 ## Working in the cloud
 
@@ -373,7 +411,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 17 fill here ---
+We used the following services: Cloud Storage, Compute Engine, Vertex AI, Artifact Registry and Cloud Build.
+Cloud Storage buckets were used to store DVC data and build artifacts. Compute Engine provided VMs for training models using custom Docker images - we also used Vertex AI for managed training jobs - while we made progress integrating our Docker images (stored in Artifact Registry) into Vertex AI for training, we were unable to get model training fully operational in the cloud. Cloud Build managed deploying updated Docker images to the Artifact Registry whenever code changes occurred.
+
 
 ### Question 18
 
@@ -388,7 +428,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 18 fill here ---
+We attempted to use Compute Engine for training our model online. We set up two instances: one with 1 CPU core and 4 GB of RAM and another with 2 CPU cores and 4 GB of RAM. Using the SSH-in-browser tool to interact with the VMs, we cloned the project’s GitHub repository and installed the required dependencies. However, we encountered issues when trying to run the Python scripts for data processing and training, as they failed to execute successfully. Part of the problem stemmed from the package installation not running as expected, which prevented the proper setup of our package. Additionally, we installed Docker and attempted to run a pre-built training image from the cloud, but we faced similar issues, leaving the training process unresolved.
+
 
 ### Question 19
 
@@ -397,7 +438,7 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 19 fill here ---
+![my_image](figures/19.png)
 
 ### Question 20
 
@@ -406,7 +447,7 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 20 fill here ---
+![my_image](figures/20.png)
 
 ### Question 21
 
@@ -415,7 +456,7 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 21 fill here ---
+![my_image](figures/21.png)
 
 ### Question 22
 
@@ -430,7 +471,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 22 fill here ---
+Our initial plan was to train the model in a Compute Engine VM. We created a VM with 1 CPU core and 4 GB RAM, cloned the GITHub repository and installed pip packages. We ran into some SSL issues during data download. After having rebuilt python with SSL in the VM a few times without luck, we gave up on Compute Engine for model training.
+For Vertex, we were able to submit a custom job using a docker-image built in the cloud. Unfortunately, we ran into issues also during data download, that we ultimately left unresolved.
+
 
 ## Deployment
 
@@ -447,7 +490,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 23 fill here ---
+We did manage to write an API for our model. We used FastAPI to implement the API, which allowed us to define endpoints for predicting disaster-related tweets. To achieve this, we loaded our pre-trained BERT model using Hugging Face's Transformers library and set up a /predict endpoint that accepts input text, processes it using the model, and returns the predicted label and confidence score. Additionally, we instrumented the API with Prometheus metrics for monitoring. These metrics include counters for request counts and errors, histograms for latency tracking, and summaries of input text lengths.
+For cloud deployment, we containerized the API using Docker and deployed it on Google Cloud Run. We configured it with a sidecar Prometheus container for collecting and exposing metrics to GCP Monitoring. This setup ensured scalability, observability, and robustness in production.
+
 
 ### Question 24
 
@@ -463,7 +508,13 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 24 fill here ---
+We successfully deployed our API both locally and in the cloud. For deployment, we wrapped our model in a FastAPI application and containerized it using Docker. Locally, we served the API using Uvicorn, exposing it at http://127.0.0.1:8080, which allowed us to test the endpoints and functionality.
+For cloud deployment, we used Google Cloud Run. We built and pushed the Docker image to Google Container Registry (GCR) and deployed it to Cloud Run. We configured the service with 1 GiB memory, a custom environment variable for credentials, and a timeout of 600 seconds. The API is accessible via a public endpoint provided by Cloud Run, listed in the readme.md of the project.
+To invoke the service, users can send a POST request to the /predict endpoint with the required text input. For example:
+curl -X POST https://twitter-backend-<id>.<region>.run.app/predict \
+     -H "Content-Type: application/json" \
+     -d '{"text": "Sample tweet text"}'
+
 
 ### Question 25
 
@@ -478,7 +529,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 25 fill here ---
+For unit testing, we used pytest to validate the functionality of the API endpoints, focusing on the /, /health, and /predict endpoints. While we successfully tested the basic endpoints (/ and /health), testing the /predict endpoint presented challenges. Specifically in mocking external dependencies like the tokenizer and model using unittest.mock.
+We did not perform any load testing, however this could be done using for example the locust library.
+
 
 ### Question 26
 
@@ -493,7 +546,10 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 26 fill here ---
+We managed to implement monitoring locally without any issues, using the procedure described in the course. Here we tracked key metrics such as request counts, response times, error rates, and text input lengths. Prometheus was used to expose these metrics via a /metrics endpoint, and we set up all necessary scripts to integrate with Prometheus. This allowed us to monitor the API's performance and identify potential bottlenecks during local testing.
+However, when deploying the API to the cloud, we encountered an issue where the /metrics endpoint could not be accessed, as indicated by the deployment logs. This prevented us from fully verifying the monitoring setup in the production environment. Despite this, the monitoring scripts and configurations were completed, and resolving this issue would enable us to seamlessly extend the same monitoring capabilities to the cloud deployment.
+Monitoring is essential for the application’s longevity as it helps track real-time performance, detect anomalies, and identify data drift. This would allow timely intervention and ensure the application remains robust and scalable under different conditions.
+
 
 ## Overall discussion of project
 
@@ -512,7 +568,9 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 27 fill here ---
+Over the course of the project, we ended up spending approximately 40 DKK in credits. These costs were almost exclusively associated with Compute Engine VM instances, which we used extensively during our attempts at model training. The expenses accumulated primarily because the VMs were running for several hours at a time, often in parallel, as we experimented with different configurations and approaches to set up the training environment. Despite our efforts, some of the training attempts were unsuccessful due to setup issues, such as problems with running package installation and challenges with configuring Docker containers for the cloud environment.
+Working in the cloud initially felt overwhelming due to the sheer number of available products and APIs. However, the automation of many tasks and the range of capabilities we were able to leverage within the given timeframe highlighted just how powerful cloud computing can be.
+
 
 ### Question 28
 
@@ -528,7 +586,10 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 28 fill here ---
+In addition to the core components of our project, we implemented a frontend for our API using Streamlit. We did this to provide users with an intuitive interface to interact with our Twitter Disaster Classification model. The frontend allows users to input a tweet, which is then sent to the backend for classification. The results, including whether the tweet is disaster-related or not, and the model's confidence, are displayed to the user. This made the project more accessible, enabling easy testing and demonstration of the model.
+We deployed both the frontend and backend to Google Cloud Run for scalability and easy management. The frontend was built with Streamlit, which simplified the development process and provided a user-friendly experience. Here's the link to the deployed frontend: 
+https://twitter-frontend-791862686266.europe-west1.run.app/
+
 
 ### Question 29
 
@@ -545,7 +606,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 29 fill here ---
+[my_image](figures/diagram.png)
+
 
 ### Question 30
 
@@ -559,7 +621,11 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 30 fill here ---
+One of the biggest challenges we faced during the project was training our model using Google Cloud. This stemmed from difficulties in properly setting up the Compute Engine virtual machines (VMs) for package installation. Specifically, we encountered issues running “pip install -e .” on the VM, which is critical for installing our project in editable mode. Without this step, we were unable to fully set up our environment, fetch the required data, or execute the training script as intended. This led to multiple iterations of rebuilding python within the VM, all of which were unsuccessful.
+Debugging in the cloud was initially challenging as well, due to limited visibility into errors and what caused them. Enabling the project’s service accounts to write logs made this process a lot easier, as it provided detailed error messages that allowed us to resolve issues much faster.
+Deploying the API also turned out to be quite challenging. We had to make sure it integrated smoothly with the trained model and handled requests consistently. Setting it up in the cloud added extra complexity and we also ran into issues like connection errors and timeouts, which took some extra effort to debug. Even though it was tricky at times, the process taught us a lot about cloud deployment and problem-solving.
+In general getting things that work locally set up with your cloud integration was challenging, docker helped relieve some of these challenges but was also a cause of additional ones, with many specifics having to be precisely stated before docker would correctly run. Also testing docker locally was a slow process that demanded many compute resources.
+
 
 ### Question 31
 
@@ -576,5 +642,8 @@ s234823, s234830, s234865
 >
 > Answer:
 
---- question 31 fill here ---
+Student s234823 was responsible for setting up the dvc GC link, creating the Docker containers for training our application and most of the src scripts related to the model. Student s234830 focused on managing cloud infrastructure, including setting up services like Compute Enging, Vertex AI  and Cloud Build triggers. Student s234865 took charge of setting up and deploying the API to ensure it was up and running as expected.
+We all contributed to the code in various ways, from writing and debugging to reviewing pull requests and providing feedback. We used GitHub to collaborate and keep track of everyone’s contributions, which made it easy to stay organized and work as a team. For debugging, we have sometimes relied on tools like ChatGPT and used GitHub Copilot to help write code faster and more efficiently.
+We also held regular team meetings to share progress, tackle any challenges, and plan our next steps together. This made sure that everyone was on the same page and could contribute equally to the project. 
+
 
