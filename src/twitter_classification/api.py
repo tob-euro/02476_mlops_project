@@ -1,12 +1,13 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from prometheus_client import Counter, make_asgi_app
+from prometheus_client import Counter, Histogram, Summary, make_asgi_app, CollectorRegistry
 import torch
 from pathlib import Path
+import logging
 
 # Initialize FastAPI app
-app = FastAPI()
+app = FastAPI(strict_slashes=False)
 
 # Global variables for the model and tokenizer
 model = None
@@ -22,10 +23,24 @@ class PredictionResponse(BaseModel):
     label: int
     confidence: float
 
-# Define Prometheus metrics
-error_counter = Counter("prediction_error", "Number of prediction errors")
+# Define Prometheus metrics in a custom registry
+MY_REGISTRY = CollectorRegistry()
+error_counter = Counter(
+    "prediction_error", "Number of prediction errors", registry=MY_REGISTRY
+)
+request_counter = Counter(
+    "prediction_requests", "Number of prediction requests", registry=MY_REGISTRY
+)
+request_latency = Histogram(
+    "prediction_latency_seconds", "Prediction latency in seconds", registry=MY_REGISTRY
+)
+text_length_summary = Summary(
+    "text_length_summary", "Summary of text lengths in prediction requests", registry=MY_REGISTRY
+)
 
-app.mount("/metrics", make_asgi_app())
+# Expose the metrics endpoint
+app.mount("/metrics/", make_asgi_app(registry=MY_REGISTRY))
+
 
 @app.on_event("startup")
 async def load_model():
@@ -42,14 +57,6 @@ async def load_model():
     except Exception as e:
         raise RuntimeError(f"Failed to load model: {e}")
 
-@app.on_event("shutdown")
-async def cleanup():
-    """Clean up resources during shutdown."""
-    global model, tokenizer
-    del model, tokenizer
-    print("Cleaned up resources.")
-
-# Root endpoint
 @app.get("/")
 async def root():
     """Root endpoint with a friendly message."""
@@ -61,13 +68,11 @@ async def root():
         }
     }
 
-# Health check endpoint
 @app.get("/health")
 async def health_check():
     """Health check endpoint."""
     return {"status": "healthy"}
 
-# Prediction endpoint
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(request: PredictionRequest):
     """
@@ -79,18 +84,27 @@ async def predict(request: PredictionRequest):
     Returns:
         PredictionResponse: Predicted label and confidence score.
     """
-    try:
-        # Tokenize the input text
-        inputs = tokenizer(request.text, return_tensors="pt", truncation=True, padding=True).to(device)
+    if not request.text.strip():
+        raise HTTPException(status_code=422, detail="Text cannot be empty or whitespace.")
 
-        # Perform inference
-        with torch.no_grad():
-            outputs = model(**inputs)
+    request_counter.inc()  # Increment request counter
+    with request_latency.time():  # Measure latency of request
+        try:
+            text_length_summary.observe(len(request.text))  # Observe text length
 
-        # Get predicted label and confidence
-        probabilities = torch.nn.functional.softmax(outputs.logits, dim=-1)
-        confidence, label = torch.max(probabilities, dim=1)
+            # Tokenize the input text
+            inputs = tokenizer(request.text, return_tensors="pt", truncation=True, padding=True).to(device)
 
-        return PredictionResponse(label=label.item(), confidence=confidence.item())
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")
+            # Perform inference
+            with torch.no_grad():
+                outputs = model(**inputs)
+
+            # Get predicted label and confidence
+            probabilities = torch.nn.functional.softmax(outputs.logits, dim=-1)
+            confidence, label = torch.max(probabilities, dim=1)
+
+            return PredictionResponse(label=label.item(), confidence=confidence.item())
+        except Exception as e:
+            logging.error(f"Prediction error: {e}")
+            error_counter.inc()  # Increment error counter
+            raise HTTPException(status_code=500, detail=f"Prediction failed: {e}")

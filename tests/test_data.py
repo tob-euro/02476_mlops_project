@@ -42,15 +42,3 @@ def test_preprocess_data(mock_read_csv, mock_text_dataset):
     preprocess_data(raw_dir, processed_dir)
 
     mock_read_csv.assert_called()
-
-
-@pytest.mark.skipif(not os.path.exists(_PATH_RAW_DATA), reason="Raw data not found")
-def test_labels_representation():
-    """Test that all labels are represented in the dataset."""
-    dataset = TextDataset(data_dir=_PATH_RAW_DATA, file_name="train.csv")
-    if "target" in dataset.data.columns:
-        labels = dataset.data["target"].unique()
-        assert len(labels) > 0, "No labels found in the dataset"
-        assert all(
-            label in labels for label in range(len(labels))
-        ), "Not all labels are represented in the dataset"

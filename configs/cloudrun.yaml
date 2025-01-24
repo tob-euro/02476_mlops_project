@@ -1,0 +1,19 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: twitter-backend
+  namespace: mlops-448114
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/mlops-448114/twitter-api
+          ports:
+            - containerPort: 8080
+          env:
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /app/gcp-key.json
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"

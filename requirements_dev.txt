@@ -16,5 +16,3 @@ mkdocs==1.5.3
 mkdocs-material==9.4.6
 mkdocstrings-python==1.12.2
 
-black==23.3.0
-flake8==6.0.0
