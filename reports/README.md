@@ -620,7 +620,11 @@ https://twitter-frontend-791862686266.europe-west1.run.app/
 >
 > Answer:
 
---- question 30 fill here ---
+One of the biggest challenges we faced during the project was training our model using Google Cloud. This stemmed from difficulties in properly setting up the Compute Engine virtual machines (VMs) for package installation. Specifically, we encountered issues running “pip install -e .” on the VM, which is critical for installing our project in editable mode. Without this step, we were unable to fully set up our environment, fetch the required data, or execute the training script as intended. This led to multiple iterations of rebuilding python within the VM, all of which were unsuccessful.
+Debugging in the cloud was initially challenging as well, due to limited visibility into errors and what caused them. Enabling the project’s service accounts to write logs made this process a lot easier, as it provided detailed error messages that allowed us to resolve issues much faster.
+Deploying the API also turned out to be quite challenging. We had to make sure it integrated smoothly with the trained model and handled requests consistently. Setting it up in the cloud added extra complexity and we also ran into issues like connection errors and timeouts, which took some extra effort to debug. Even though it was tricky at times, the process taught us a lot about cloud deployment and problem-solving.
+In general getting things that work locally set up with your cloud integration was challenging, docker helped relieve some of these challenges but was also a cause of additional ones, with many specifics having to be precisely stated before docker would correctly run. Also testing docker locally was a slow process that demanded many compute resources.
+
 
 ### Question 31
 
