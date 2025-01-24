@@ -642,5 +642,8 @@ In general getting things that work locally set up with your cloud integration w
 >
 > Answer:
 
---- question 31 fill here ---
+Student s234823 was responsible for setting up the dvc GC link, creating the Docker containers for training our application and most of the src scripts related to the model. Student s234830 focused on managing cloud infrastructure, including setting up services like Compute Enging, Vertex AI  and Cloud Build triggers. Student s234865 took charge of setting up and deploying the API to ensure it was up and running as expected.
+We all contributed to the code in various ways, from writing and debugging to reviewing pull requests and providing feedback. We used GitHub to collaborate and keep track of everyone’s contributions, which made it easy to stay organized and work as a team. For debugging, we have sometimes relied on tools like ChatGPT and used GitHub Copilot to help write code faster and more efficiently.
+We also held regular team meetings to share progress, tackle any challenges, and plan our next steps together. This made sure that everyone was on the same page and could contribute equally to the project. 
+
 
