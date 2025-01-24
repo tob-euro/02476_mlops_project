@@ -188,7 +188,7 @@ pip install -r requirements_dev.txt
 >
 > Answer:
 
-From the cookiecutter template we have filled out the configs, .github, data, dockerfiles, models, src, tests and reports folder. We have removed the notebooks and the docs folder because we did not use any notebooks or generate documentation with MkDocs for our project. We also added an .dvc folder to manage experiment configuration and track data versions using Data Version Control (DVC). Inside the src folder, we’ve broken the code into separate modules for handling data, training models, evaluating them, and running inference, which helps keep everything organized. The api.py  file runs the FastAPI server, while train.py takes care of training the model. We’ve created unit tests in the folder tests to cover data processing, API and model behavior to ensure everything works correctly. 
+From the cookiecutter template we have filled out the configs, .github, data, dockerfiles, models, src, tests and reports folder. We have removed the notebooks and the docs folder because we did not use any notebooks or generate documentation with MkDocs for our project. We also added an .dvc folder to manage experiment configuration and track data versions using Data Version Control (DVC). Inside the src folder, we’ve broken the code into separate modules for handling data, training models, evaluating them, and running inference, which helps keep everything organized. The api.py  file runs the FastAPI server, while train.py takes care of training the model. We’ve created unit tests in the folder tests to cover data processing, API and model behavior to ensure everything works correctly.
 
 
 ### Question 6
@@ -338,7 +338,7 @@ We used a simple Python script to run the experiment, where we load the configur
 
 To make sure our experiments are reproducible and no information is lost, we implemented detailed logging and used version control. Every time an experiment runs, we log key details like the hyperparameters (e.g., epochs, batch size, learning rate), training progress, and model performance. These logs are saved in a structured way, so they can be easily referred back to.
 We also use Git for version control, which means anyone can access the exact same code to run the experiment again. During training, we save model checkpoints, so if needed, we can resume or verify the experiment at any point.
-To reproduce an experiment, you would simply clone the repository, set up the environment using requirements.txt, and run the training script with the same parameters. 
+To reproduce an experiment, you would simply clone the repository, set up the environment using requirements.txt, and run the training script with the same parameters.
 
 
 ### Question 14
@@ -587,8 +587,8 @@ Working in the cloud initially felt overwhelming due to the sheer number of avai
 > Answer:
 
 In addition to the core components of our project, we implemented a frontend for our API using Streamlit. We did this to provide users with an intuitive interface to interact with our Twitter Disaster Classification model. The frontend allows users to input a tweet, which is then sent to the backend for classification. The results, including whether the tweet is disaster-related or not, and the model's confidence, are displayed to the user. This made the project more accessible, enabling easy testing and demonstration of the model.
-We deployed both the frontend and backend to Google Cloud Run for scalability and easy management. The frontend was built with Streamlit, which simplified the development process and provided a user-friendly experience. Here's the link to the deployed frontend: 
-https://twitter-frontend-791862686266.europe-west1.run.app/
+We deployed both the frontend and backend to Google Cloud Run for scalability and easy management. The frontend was built with Streamlit, which simplified the development process and provided a user-friendly experience. Here's the link to the deployed frontend:
+https://twitter-frontend-791862686266.europe-west1.run.app
 
 
 ### Question 29
@@ -644,6 +644,4 @@ In general getting things that work locally set up with your cloud integration w
 
 Student s234823 was responsible for setting up the dvc GC link, creating the Docker containers for training our application and most of the src scripts related to the model. Student s234830 focused on managing cloud infrastructure, including setting up services like Compute Enging, Vertex AI  and Cloud Build triggers. Student s234865 took charge of setting up and deploying the API to ensure it was up and running as expected.
 We all contributed to the code in various ways, from writing and debugging to reviewing pull requests and providing feedback. We used GitHub to collaborate and keep track of everyone’s contributions, which made it easy to stay organized and work as a team. For debugging, we have sometimes relied on tools like ChatGPT and used GitHub Copilot to help write code faster and more efficiently.
-We also held regular team meetings to share progress, tackle any challenges, and plan our next steps together. This made sure that everyone was on the same page and could contribute equally to the project. 
-
-
+We also held regular team meetings to share progress, tackle any challenges, and plan our next steps together. This made sure that everyone was on the same page and could contribute equally to the project.
