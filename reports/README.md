@@ -438,7 +438,9 @@ We attempted to use Compute Engine for training our model online. We set up two 
 >
 > Answer:
 
---- question 19 fill here ---
+```markdown
+![my_image](figures/19.png)
+```
 
 ### Question 20
 
@@ -447,7 +449,9 @@ We attempted to use Compute Engine for training our model online. We set up two 
 >
 > Answer:
 
---- question 20 fill here ---
+```markdown
+![my_image](figures/20.png)
+```
 
 ### Question 21
 
@@ -456,7 +460,9 @@ We attempted to use Compute Engine for training our model online. We set up two 
 >
 > Answer:
 
---- question 21 fill here ---
+```markdown
+![my_image](figures/21.png)
+```
 
 ### Question 22
 
@@ -606,7 +612,9 @@ https://twitter-frontend-791862686266.europe-west1.run.app/
 >
 > Answer:
 
---- question 29 fill here ---
+```markdown
+![my_image](figures/diagram.png)
+```
 
 ### Question 30
 
