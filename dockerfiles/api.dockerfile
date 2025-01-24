@@ -17,6 +17,10 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Install DVC and required plugins
 RUN pip install dvc[gdrive] dvc[gs]
 
+# Copy the service account key file and set the Google Cloud credentials
+COPY .env/mlops-448114-e0e59a05789f.json /app/mlops-448114-e0e59a05789f.json
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/mlops-448114-e0e59a05789f.json
+
 # Copy the entire project into the container
 COPY . /app
 
