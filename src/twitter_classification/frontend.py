@@ -13,11 +13,20 @@ def get_prediction(text):
         )
         if response.status_code == 200:
             return response.json()
+        elif response.status_code == 500:
+            st.error("The backend encountered an error. Please try again later.")
+        elif response.status_code == 404:
+            st.error("The backend endpoint was not found. Please check the BACKEND_URL.")
         else:
-            st.error(f"Error: {response.status_code}, {response.text}")
+            st.error(f"Unexpected error: {response.status_code}, {response.text}")
+    except requests.exceptions.Timeout:
+        st.error("The request timed out. Please try again later.")
+    except requests.exceptions.ConnectionError:
+        st.error("Failed to connect to the backend. Please check the BACKEND_URL.")
     except requests.exceptions.RequestException as e:
         st.error(f"Request failed: {e}")
     return None
+
 
 def main():
     """Streamlit app for Twitter Disaster Classification."""
